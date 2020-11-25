@@ -21,7 +21,7 @@ class SecondActivity : AppCompatActivity() {
 
         var textoMostrar = ""
 
-        textoObtenido?.run {
+        textoObtenido?.let {
             conversionLista = textoObtenido.split(" ").toMutableList()
             conversionLista?.forEach {
                 textoMostrar += it + "\n"
