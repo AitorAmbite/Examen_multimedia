@@ -2,6 +2,8 @@ package com.example.examen_multimedia
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.second_activity.*
@@ -25,6 +27,7 @@ class SecondActivity : AppCompatActivity() {
                 textoMostrar += it + "\n"
             }
             tv_second.text = textoMostrar
+
         }
 
         bt_second_1.setOnClickListener {
@@ -34,9 +37,10 @@ class SecondActivity : AppCompatActivity() {
             }
             tv_second.text = textoMostrar
         }
+
         bt_second_2.setOnClickListener {
             textoMostrar = ""
-            conversionLista.sorted()?.forEach {
+            conversionLista.sortedBy{ T -> T.length }?.forEach {
                 textoMostrar += it+"\n"
             }
             tv_second.text = textoMostrar
@@ -45,10 +49,10 @@ class SecondActivity : AppCompatActivity() {
         bt_second_3.setOnClickListener {
             textoMostrar = ""
             if (!et_second_number.text.isNullOrEmpty()) {
-                var filtro = conversionLista.asSequence()
+                val filtro = conversionLista.asSequence()
                     .filter { it.length > et_second_number.text.toString().toInt() }
 
-                filtro?.forEach {
+                filtro.forEach {
                     textoMostrar += it + "\n"
                 }
                 tv_second.text = textoMostrar.toString()
@@ -58,4 +62,5 @@ class SecondActivity : AppCompatActivity() {
             }
         }
     }
+
 }

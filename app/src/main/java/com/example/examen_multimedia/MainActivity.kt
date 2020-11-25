@@ -24,9 +24,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 var lista = et_activity_1.text.split(" ")
-                if (lista.size >= 4) {
-                    bt_lanzar_second.isEnabled = true;
-                }
+                bt_lanzar_second.isEnabled = lista.size >= 4
             }
 
         })
