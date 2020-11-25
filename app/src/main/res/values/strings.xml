@@ -3,4 +3,5 @@
     <string name="boton1">Dar tamaño</string>
     <string name="boton2">Ordenar por tamaño</string>
     <string name="boton3">filtrar por tamaño</string>
+    <string name="boton_ir_sa">ir_actividad_2</string>
 </resources>
